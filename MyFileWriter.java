@@ -46,5 +46,6 @@ public class MyFileWriter {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.out.println("This is extra commit code");
     }
 }
