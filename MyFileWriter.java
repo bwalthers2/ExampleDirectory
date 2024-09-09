@@ -26,5 +26,11 @@ public class MyFileWriter {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        printFileSize(".passwordFile.txt");
+    }
+
+    private static void printFileSize(String fileName) {
+        File sizeFile = new File(fileName);
+        System.out.println(sizeFile.length());
     }
 }
