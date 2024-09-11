@@ -4,6 +4,18 @@ import java.nio.file.*;
 import java.nio.charset.StandardCharsets;
 
 public class MyFileWriter {
+
+    private static void printTotalFileSize(String... fileNames) {
+        long totalSize = 0;
+        for (String fileName : fileNames) {
+            File file = new File(fileName);
+            if (file.exists()) {
+                totalSize += file.length();
+            }
+        }
+        System.out.println("Total size of all files: " + totalSize + " bytes");
+    }
+    
     public static void main(String[] args) {
         String passwordString = "This Is Top Secret! Get Out Of Here!";
         String fileName1 = "example1.txt";
@@ -26,5 +38,7 @@ public class MyFileWriter {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        printTotalFileSize("fileInHiddenDir.txt", ".passwordFile.txt");
     }
 }
