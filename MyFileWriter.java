@@ -27,4 +27,15 @@ public class MyFileWriter {
             e.printStackTrace();
         }
     }
+    private static void printTotalFileSize(String... fileNames) {
+        long totalSize = 0;
+        for (String fileName : fileNames) {
+            File file = new File(fileName);
+            if (file.exists()) {
+                totalSize += file.length();
+            }
+        }
+        System.out.println("Total size of all files: " + totalSize + " bytes");
+    }
+    
 }
